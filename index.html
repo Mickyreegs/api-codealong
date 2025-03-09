@@ -31,6 +31,12 @@
                         <label for="filename" class="col-2 form-label">Filename:</label>
                         <div class="col-6">
                             <input class="form-control" aria-describedby="fileHelp" placeholder="Enter filename" id="filename" name="filename" type="text">
+                            <!--we can send the parameters called code, url, filename and options-->
+                            <!--
+                            you’ll see that these parameter names correspond  to the name attribute in each of our form fields.
+                            Now this is a very common way of accessing  an API via a form. You give your form fields
+                            the name that corresponds to the required  parameter, and it will be accepted by the API.
+                            -->
                             <small id="fileHelp" class="form-text">Mandatory if you are pasting code, but not used if you enter a URL.</small>
                         </div>
                     </div>
