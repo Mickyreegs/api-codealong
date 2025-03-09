@@ -44,6 +44,31 @@ async function getStatus(e) {
     const data = await response.json();
 
     if(response.ok) {
-        console.log(data.expiry);
+        displayStatus(data);
+    } else {
+        throw new Error(data.error);
     }
+}
+
+/*
+So now we just need to create our display  status function and this will take in the parameter of data.
+Okay, so our display  status function needs to set the heading text
+to API key status, it needs to set the body  text to, "your key is valid until" and the date,  
+and it needs to show the modal.
+
+As you can see, I set the  heading text to API key status  
+I set the results variable to the content that  I want in the body using template literals.  
+Then using document.getElementById and the  IDs I gave you earlier I set the content.  
+And finally, the results modal is shown.
+*/
+function displayStatus(data) {
+
+    let heading = "API Key Status";
+    let results = `<div>Your key is valid until</div>`
+    results += `<div class="key-status">${data.expiry}</div>`;
+
+    document.getElementById("resultsModalTitle").innerText = heading;
+    document.getElementById("results-content").innerHTML = results;
+
+    resultsModal.show();
 }
